@@ -8,7 +8,8 @@ export function clone<T>(value: T): T {
 		return NaN as unknown as T;
 	} else if (typeof structuredClone === 'function') {
 		// Available in Node >= 18.
-		return structuredClone(value);
+		// return structuredClone(value);
+		value.clone()
 	} else {
 		return JSON.parse(JSON.stringify(value));
 	}
